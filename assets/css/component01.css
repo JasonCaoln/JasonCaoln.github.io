@@ -1,48 +1,13 @@
+.cm-btn{padding: 5px 10px;  text-align: center; border-radius: 4px}
+.cm-btn:hover {cursor: pointer;color: white;}
+.cm-one-line{display: -webkit-box;display: -ms-flexbox;display: flex;}
 
-	.reveal-modal-bg { 
-		position: fixed; 
-		height: 100%;
-		width: 100%;
-		background: #000;
-		background: rgba(0,0,0,.8);
-		z-index: 100;
-		display: none;
-		top: 0;
-		left: 0; 
-		}
-	
-	.reveal-modal {
-		visibility: hidden;
-		top: 100px; 
-		left: 50%;
-		margin-left: -300px;
-		width: 520px;
-		background: #eee url(/assets/img/modal-gloss.png) no-repeat -200px -80px;
-		position: absolute;
-		z-index: 101;
-		padding: 30px 40px 34px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		}
-		
-	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
-	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
-	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
-	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
-	
-	.reveal-modal .close-reveal-modal {
-		font-size: 22px;
-		line-height: .5;
-		position: absolute;
-		top: 8px;
-		right: 11px;
-		color: #aaa;
-		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
-		font-weight: bold;
-		cursor: pointer;
-		} 
 
+.btn1{color: #409eff; background: #ecf5ff;border-color:#b3d8ff;}
+.btn1:hover{ background: #409eff;}
+.btn2{color: #67c23a; background: #f0f9eb;border-color:#c2e7b0;}
+.btn2:hover{ background: #67c23a;}
+.btn3{color: #878d99; background: #f3f4f5;border-color:#cfd1d6;}
+.btn3:hover{ background: #878d99;}
+.outer-box {justify-content: center}
+.outer-box span{margin: 0 20px; }
