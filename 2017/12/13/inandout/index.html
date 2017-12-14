@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>inandout | Jayaoln | | 杂记</title>
+  <title>深入浅出--string | Jayaoln | | 杂记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="inandout">
+  <meta name="description" content="我待string如初恋">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出--string">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/inandout/index.html">
 <meta property="og:site_name" content="Jayaoln | | 杂记">
-<meta property="og:updated_time" content="2017-12-13T09:35:57.000Z">
+<meta property="og:description" content="我待string如初恋">
+<meta property="og:updated_time" content="2017-12-14T02:02:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="inandout">
+<meta name="twitter:title" content="深入浅出--string">
+<meta name="twitter:description" content="我待string如初恋">
   
     <link rel="alternative" href="/atom.xml" title="Jayaoln | | 杂记" type="application/atom+xml">
   
@@ -133,7 +137,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      inandout
+      深入浅出--string
     </h1>
   
 
@@ -146,7 +150,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>我待string如初恋    </p>
+</blockquote>
+<a id="more"></a>
+<h3 id="1、深入string"><a href="#1、深入string" class="headerlink" title="1、深入string"></a>1、深入string</h3><p>string不是一个对象，但是：<br>有属性：<br>string.length<br>string.constructor<br>string.prototype</p>
+<p>有方法：<br>string.slice()<br>substring()<br>…等</p>
+<p>作为一个基本类型，string是如何实现调用的呢？</p>
+<p>看一个栗子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'aaa'</span>;</span><br><span class="line">alert(<span class="string">'str1.length'</span>);  <span class="comment">//3</span></span><br><span class="line">str1.a = <span class="number">1</span>;</span><br><span class="line">alert(’str1.a’); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>明明给str1属性a赋值没报错，但是为什么访问不到呢？</p>
+<h3 id="在string调用属性和方法时，js首先将string转换为对象，完成属性访问（即执行完第二行）就直接销毁。第三行也如此，但是执行完后，就被销毁，因此再访问a就不存在了。"><a href="#在string调用属性和方法时，js首先将string转换为对象，完成属性访问（即执行完第二行）就直接销毁。第三行也如此，但是执行完后，就被销毁，因此再访问a就不存在了。" class="headerlink" title="在string调用属性和方法时，js首先将string转换为对象，完成属性访问（即执行完第二行）就直接销毁。第三行也如此，但是执行完后，就被销毁，因此再访问a就不存在了。"></a>在string调用属性和方法时，js首先将string转换为对象，完成属性访问（即执行完第二行）就直接销毁。第三行也如此，但是执行完后，就被销毁，因此再访问a就不存在了。</h3><p>真是解决了老夫多年的疑问。。。。</p>
+<p>其他基本类型也是如此。</p>
+<h3 id="2、string的属性和方法"><a href="#2、string的属性和方法" class="headerlink" title="2、string的属性和方法"></a>2、string的属性和方法</h3><p>*</p>
+
       
 
       
@@ -175,6 +192,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -241,7 +269,7 @@
   
   
     <a href="/2017/12/13/goldtext/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">goldtext</div>
+      <div class="article-nav-title">goldtext--一言蔽之</div>
       <i class="icon-circle-right"></i>
     </a>
   
