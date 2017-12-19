@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js笑嘻嘻 | Jayaoln | | 杂记</title>
+  <title>git VS svn | Jayaoln | | 杂记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="js">
+  <meta name="description" content="无敌强大的git啊!">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js笑嘻嘻">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/startjs/index.html">
+<meta property="og:title" content="git VS svn">
+<meta property="og:url" content="http://yoursite.com/2017/12/15/git/index.html">
 <meta property="og:site_name" content="Jayaoln | | 杂记">
-<meta property="og:image" content="http://yoursite.com/assets/img/1.jpeg">
-<meta property="og:updated_time" content="2017-12-14T11:18:11.000Z">
+<meta property="og:description" content="无敌强大的git啊!">
+<meta property="og:updated_time" content="2017-12-19T02:04:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js笑嘻嘻">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/1.jpeg">
+<meta name="twitter:title" content="git VS svn">
+<meta name="twitter:description" content="无敌强大的git啊!">
   
     <link rel="alternative" href="/atom.xml" title="Jayaoln | | 杂记" type="application/atom+xml">
   
@@ -129,29 +130,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-startjs" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js笑嘻嘻
+      git VS svn
     </h1>
   
 
         
-        <a href="/2017/12/13/startjs/" class="archive-article-date">
-  	<time datetime="2017-12-13T08:23:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
+        <a href="/2017/12/15/git/" class="archive-article-date">
+  	<time datetime="2017-12-15T02:37:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/img/1.jpeg" alt="jsjsjjs"> </p>
-<a id="more"></a>
-<p>近期开始重新啃js，记录遗忘点和坑。</p>
+        <blockquote>
+<p>无敌强大的git啊!</p>
+</blockquote>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="现实场景实践-一、bug修复"><a href="#现实场景实践-一、bug修复" class="headerlink" title="现实场景实践  一、bug修复"></a>现实场景实践  一、bug修复</h3><p>情景：假定我们在用dev分支进行开发，master有一个紧急的bug需要修复。</p>
+<blockquote>
+<p>1.保存当前dev分支进度<br>2.建立一个新的分支bug-001<br>3.修复后，合并分支<br>4.删除临时分支bug-001<br>5.回到dev分支</p>
+</blockquote>
+<p>1.保存当前进度：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure></p>
+<p>2.切换到master创建一个新的bug解决分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git checkout -b bug<span class="number">-001</span></span><br></pre></td></tr></table></figure></p>
+<p>3.一顿解决并提交<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add bugFile.js</span><br><span class="line">git commit -m <span class="string">'solve a bug-001'</span></span><br></pre></td></tr></table></figure></p>
+<p>4.合并该分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff -m <span class="string">'solve a bug-001'</span> bug<span class="number">-001</span></span><br></pre></td></tr></table></figure></p>
+<p>5.回到dev分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure></p>
+<p><code>注意这里回到dev分支后有两种方法进行恢复之前状态</code><br><code>git stash apply</code><br>恢复了但是stash内容不删除，可以再用git stash drop 删除<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure></p>
+<p><code>ii:恢复同时删除了stash内容</code><strong>(推荐)</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git stash list</span><br></pre></td></tr></table></figure></p>
+<p>第二种就看不到任何stash内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply stash@&#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>补充：当我们多次stash后，恢复的时候，可以用 git stash list 查看，恢复到指定版本</p>
+</blockquote>
+<p><br></p>
+<h3 id="现实场景实践-二、合作开发"><a href="#现实场景实践-二、合作开发" class="headerlink" title="现实场景实践  二、合作开发"></a>现实场景实践  二、合作开发</h3><p>情景：远程有master和dev仓库，A和B拉下分支进行各自开发，A和B同时修改了common.js文件。</p>
+<blockquote>
+<p>1.A拉取并进行修改<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:jaycaoln/jaycaoln.git</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>注意，本地只能看到master分支.</p>
+<blockquote>
+<p>2.创建远程origin的dev分支。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev origin/dev</span><br></pre></td></tr></table></figure></p>
+<p>3.当A修改好后，推送他的提交<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add common-page</span><br><span class="line">git commit -m <span class="string">'A modefied'</span></span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>B同时也修改了该文件,同样的进行推送。</p>
+<blockquote>
+<p>4.这个时候报错，需要先下拉解决冲突<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add common-page</span><br><span class="line">git commit -m <span class="string">'B modefied'</span></span><br><span class="line">git pull origin dev</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>同时B需要指定他本地的dev与远程的dev连接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream dev origin/dev</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>解决完冲突后，进行push</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="git和svn的不同"><a href="#git和svn的不同" class="headerlink" title="git和svn的不同"></a>git和svn的不同</h3><p>git是分布式版本控制系统，svn是集中式版本控制系统。分布式和集中式主要区别：<br>1.集中式需要联网。无论是局域网，都是依赖网速的，文件很大就很慢了。<br>2.分布式每个人的电脑都是一个完整的版本库。<br>在git中有一个暂存区概念，add就是将文件放在暂存区，只有commit之后，才将暂存区的提交到仓库。</p>
+<h3 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h3><h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><blockquote>
+<p>1.将一个目录变成git仓库。<br>比如我们的项目gitDemo文件夹,切换到该文件夹后.这里会生成一个.git目录，默认是隐藏的，通过ls -ah可以看到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>2.新建一个文件 firstPage.js，将该文件添加到仓库，在提交到仓库。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add firstPage.js</span><br><span class="line">git commit firstPage.js -m <span class="string">'add firstPage'</span></span><br></pre></td></tr></table></figure></p>
+<p>3.修改firstPage.js时，查看修改的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>将显示有修改的文件。</p>
+<p>4.查看某个文件具体修改的内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff firstPage.js</span><br></pre></td></tr></table></figure></p>
+<p>5.查看提交记录(版本记录)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></p>
+<p>更简洁的显示方式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=online</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><br></p>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><p>1.一般删除<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d test-branch</span><br></pre></td></tr></table></figure></p>
+<p>2.强制删除<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D test-branch</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h4 id="回退"><a href="#回退" class="headerlink" title="回退"></a>回退</h4><blockquote>
+<p>1.回退版本,HEAD^回退一个版本，^以此类推。HEAD~100,回退到以前100版本。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></p>
+<p>2.回退到指定版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard id</span><br></pre></td></tr></table></figure></p>
+<p>如果忘了自己的id，git会记录每一次命令：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></p>
+<p>3.将当前的修改回撤<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file</span><br></pre></td></tr></table></figure></p>
+<p>在工作区或者暂存区进行的修改，执行后都是回到当前区最原始的状态。<br>4.将暂存区回撤到工作区。我们add后，文件保存到暂存区了，如果需要将暂存区的回撤到工作区，就需要：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD file</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这里回撤到工作区最后的修改状态，在通过git checkout –file 就可以在工作区回撤<br><br></p>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><blockquote>
+<p>1.删除文件的时候。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm test.txt</span><br></pre></td></tr></table></figure></p>
+<p>这个时候，有两种思路，提交此次删除操作。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm test.txt</span><br><span class="line">git commit -m <span class="string">'remove test.txt'</span></span><br></pre></td></tr></table></figure></p>
+<p>另外一种想要恢复:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- test.txt</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><br></p>
+<h4 id="拉取远程仓库"><a href="#拉取远程仓库" class="headerlink" title="拉取远程仓库"></a>拉取远程仓库</h4><blockquote>
+<p>本地项目拉取远程仓库，<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:jaycaoln/caoln.git</span><br></pre></td></tr></table></figure></p>
+<p>把本地的推到远程<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>由于远程仓库是空的，所以第一次要-u，之后只要这样。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>克隆远程库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:jaycaoln/jaycaoln.git</span><br></pre></td></tr></table></figure></p>
+<p>远程仓库一些命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
+<p>查看远程仓库的信息<br><br></p>
+<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><p>假定我们有master分支，现在<br>1.切换分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure></p>
+<p>先创建，再切换<br>2.查看分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p>
+<p>3，合并分支<br>在master中合并dev分支：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure></p>
+<p>注意这里采用的是Fast forward<br>同时删除dev分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure></p>
+<p>4.使用–no-ff 参数，表示禁用Fast Forward，建议在开发的时候，尽可能多用–no-ff模式进行</p>
+</blockquote>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><blockquote>
+<p>切换到需要打标签的库，例如命名v1.0<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br><span class="line">git tag v1<span class="number">.0</span></span><br></pre></td></tr></table></figure></p>
+<p>直接对应id直接打标签也可以<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1<span class="number">.0</span> id</span><br></pre></td></tr></table></figure></p>
+<p>git tag 可以查看标签名称<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure></p>
+<p>删除标签信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d v1<span class="number">.0</span></span><br></pre></td></tr></table></figure></p>
+<p>推送标签到远程<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push origin v1<span class="number">.0</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">git push origin --tags <span class="comment">//全部推送</span></span><br></pre></td></tr></table></figure></p>
+<p>推送了然后再删除<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -d v1<span class="number">.0</span></span><br><span class="line">gkt push origin :refs/tags/v0<span class="number">.9</span></span><br></pre></td></tr></table></figure></p>
+<p>指定标签信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tagname&gt; -m <span class="string">'tagname detail'</span></span><br></pre></td></tr></table></figure></p>
+<p>指定PGP签名标签<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -s &lt;tagname&gt; -m <span class="string">'tagname detail'</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
 
@@ -186,7 +275,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -242,7 +331,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/13/startjs/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/15/git/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,18 +345,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/13/js1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/18/linux/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          js1-常常忘记的方法...
+          linux
         
       </div>
     </a>
   
   
-    <a href="/2017/11/29/caotm/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">心情很不爽，总之ctm......</div>
+    <a href="/2017/12/14/lianke/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lianke</div>
       <i class="icon-circle-right"></i>
     </a>
   
