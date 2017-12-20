@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>git VS svn | Jayaoln | | 杂记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="无敌强大的git啊!">
+  <meta name="description" content="公司开发也有8个月了，完成了两个项目。一直都用的svn，一直听说git无比强大，直到第三个项目尝试了git，简直爱不释手！git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦！">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git VS svn">
 <meta property="og:url" content="http://yoursite.com/2017/12/15/git/index.html">
 <meta property="og:site_name" content="Jayaoln | | 杂记">
-<meta property="og:description" content="无敌强大的git啊!">
-<meta property="og:updated_time" content="2017-12-19T02:04:28.000Z">
+<meta property="og:description" content="公司开发也有8个月了，完成了两个项目。一直都用的svn，一直听说git无比强大，直到第三个项目尝试了git，简直爱不释手！git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦！">
+<meta property="og:image" content="http://yoursite.com/assets/img/git.jpg">
+<meta property="og:updated_time" content="2017-12-19T07:50:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git VS svn">
-<meta name="twitter:description" content="无敌强大的git啊!">
+<meta name="twitter:description" content="公司开发也有8个月了，完成了两个项目。一直都用的svn，一直听说git无比强大，直到第三个项目尝试了git，简直爱不释手！git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦！">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/git.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Jayaoln | | 杂记" type="application/atom+xml">
   
@@ -150,8 +152,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>无敌强大的git啊!</p>
+        <p><img src="/assets/img/git.jpg" alt="git"> </p>
+<blockquote>
+<p>公司开发也有8个月了，完成了两个项目。一直都用的svn，一直听说git无比强大，直到第三个项目尝试了git，简直爱不释手！<br>git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦！</p>
 </blockquote>
 <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="现实场景实践-一、bug修复"><a href="#现实场景实践-一、bug修复" class="headerlink" title="现实场景实践  一、bug修复"></a>现实场景实践  一、bug修复</h3><p>情景：假定我们在用dev分支进行开发，master有一个紧急的bug需要修复。</p>
 <blockquote>
@@ -208,8 +211,9 @@
 <p>如果忘了自己的id，git会记录每一次命令：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></p>
 <p>3.将当前的修改回撤<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file</span><br></pre></td></tr></table></figure></p>
 <p>在工作区或者暂存区进行的修改，执行后都是回到当前区最原始的状态。<br>4.将暂存区回撤到工作区。我们add后，文件保存到暂存区了，如果需要将暂存区的回撤到工作区，就需要：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD file</span><br></pre></td></tr></table></figure></p>
+<p>这里回撤到工作区最后的修改状态，在通过git checkout –file 就可以在工作区回撤</p>
 </blockquote>
-<p>这里回撤到工作区最后的修改状态，在通过git checkout –file 就可以在工作区回撤<br><br></p>
+<p><br></p>
 <h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><blockquote>
 <p>1.删除文件的时候。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm test.txt</span><br></pre></td></tr></table></figure></p>
 <p>这个时候，有两种思路，提交此次删除操作。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm test.txt</span><br><span class="line">git commit -m <span class="string">'remove test.txt'</span></span><br></pre></td></tr></table></figure></p>
@@ -223,8 +227,11 @@
 <p>克隆远程库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:jaycaoln/jaycaoln.git</span><br></pre></td></tr></table></figure></p>
 <p>远程仓库一些命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure></p>
 <p>或者<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
-<p>查看远程仓库的信息<br><br></p>
-<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><p>假定我们有master分支，现在<br>1.切换分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure></p>
+<p>查看远程仓库的信息</p>
+</blockquote>
+<p><br></p>
+<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><blockquote>
+<p>假定我们有master分支，现在<br>1.切换分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure></p>
 <p>相当于<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure></p>
 <p>先创建，再切换<br>2.查看分支<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p>
 <p>3，合并分支<br>在master中合并dev分支：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure></p>
@@ -474,15 +481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
