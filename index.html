@@ -134,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/websocket/">websocket</a>
+      <a class="article-title" href="/2017/12/19/websocket/">双向通信的websocket</a>
     </h1>
   
 
@@ -147,6 +147,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><img src="/assets/img/websocket.jpeg" alt="websocket"> </p>
+<p>http的不足：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http是单向通讯的，只能实现客户端发送请求到服务端进行数据请求，服务端不能主动发送消息。在某些特定的需求下，如股票和即时通讯工具来说，就需要不断请求(轮询)。</p>
+<p>目前主流的几种方法</p>
+<blockquote>
+<p>1.轮询<br>客户端隔一段时间就向服务器发送请求，服务端立即返回数据，并关闭连接。<br>弊端：如果服务器没有新的数据，那就一直发送老数据，造成带宽和CPU的浪费。<br>2.长轮询<br>客户端发送请求后，服务端检查数据有没有更新。有就立即返回，没有服务器就’hold‘住此次更新，直到有数据再返回。<br>弊端：有效解决了带宽浪费，但是牺牲了服务器的资源。<br>3.服务器发送事件（SSE）<br>在服务器按照一定格式返回事件流，客户端为一些事件类型绑定监听函数。一旦连接建立，’事件‘会自动推送到客户端。<br>弊端：只支持服务端到客户端的单项传递。所有的IE都不支持。</p>
+</blockquote>
+<p>于是，websocket出现了。</p>
+        
+          <a class="article-more-a" href="/2017/12/19/websocket/#more">more >></a>
         
       
 
@@ -155,6 +164,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">websocket</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -274,7 +294,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/15/git/">git VS svn</a>
+      <a class="article-title" href="/2017/12/15/git/">git win!  svn out!</a>
     </h1>
   
 
@@ -288,9 +308,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/assets/img/git.jpg" alt="git"> </p>
-<blockquote>
-<p>公司开发也有8个月了，完成了两个项目。一直都用的svn，一直听说git无比强大，直到第三个项目尝试了git，简直爱不释手！<br>git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦！</p>
-</blockquote>
+<p>之前用的都是svn，一直听说git无比强大，直到第三个项目尝试了git。<br>简直爱不释手！<br><strong> git作为分布式版本控制系统，拥有独特的暂存区，不依赖联网，分支功能强大，随意切换不是梦。 </strong></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a>
         
           <a class="article-more-a" href="/2017/12/15/git/#more">more >></a>
@@ -354,7 +372,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/lianke/">lianke</a>
+      <a class="article-title" href="/2017/12/14/lianke/">链克-----区块链</a>
     </h1>
   
 
@@ -367,6 +385,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>em….没忍住买了个玩客云，就是想体验体验无比强大的区块链….</p>
+        
+          <a class="article-more-a" href="/2017/12/14/lianke/#more">more >></a>
         
       
 
@@ -375,6 +396,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">投资</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -946,6 +978,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
@@ -954,7 +990,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">投资</a>
               </li>
             
             <div class="clearfix"></div>
